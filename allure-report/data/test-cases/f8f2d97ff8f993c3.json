@@ -1,0 +1,263 @@
+{
+  "uid" : "f8f2d97ff8f993c3",
+  "name" : "TC_002 Validate Get Request with Parameters",
+  "fullName" : "AllCases.Get Delete.TC 002 Get With Param.TC_002 Validate Get Request with Parameters",
+  "historyId" : "85d67539ce5d519d2518bd02438e9f6b",
+  "time" : {
+    "start" : 1548877029484,
+    "stop" : 1548877030298,
+    "duration" : 814
+  },
+  "status" : "failed",
+  "statusMessage" : "No keyword with name 'get value from json' found.",
+  "flaky" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "No keyword with name 'get value from json' found.",
+    "steps" : [ {
+      "name" : "RequestsLibrary.Create Session",
+      "time" : {
+        "start" : 1548877029486,
+        "stop" : 1548877029491,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7df2cab25589ca91",
+        "name" : "Keyword Log",
+        "source" : "7df2cab25589ca91.html",
+        "type" : "text/html",
+        "size" : 213
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Get_Param"
+      }, {
+        "name" : "arg2",
+        "value" : "${base_url}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "&{param} = BuiltIn.Create Dictionary",
+      "time" : {
+        "start" : 1548877029493,
+        "stop" : 1548877029508,
+        "duration" : 15
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "300eb50c80b7399",
+        "name" : "Keyword Log",
+        "source" : "300eb50c80b7399.html",
+        "type" : "text/html",
+        "size" : 42
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "page=2"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${response} = RequestsLibrary.Get Request",
+      "time" : {
+        "start" : 1548877029510,
+        "stop" : 1548877030274,
+        "duration" : 764
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "dfc68c32aaa36ef",
+        "name" : "Keyword Log",
+        "source" : "dfc68c32aaa36ef.html",
+        "type" : "text/html",
+        "size" : 453
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Get_Param"
+      }, {
+        "name" : "arg2",
+        "value" : "/api/users"
+      }, {
+        "name" : "arg3",
+        "value" : "params=${param}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${statuscode} = BuiltIn.Convert To String",
+      "time" : {
+        "start" : 1548877030275,
+        "stop" : 1548877030278,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8b8b074126ce4aef",
+        "name" : "Keyword Log",
+        "source" : "8b8b074126ce4aef.html",
+        "type" : "text/html",
+        "size" : 40
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.status_code}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Should Be Equal",
+      "time" : {
+        "start" : 1548877030279,
+        "stop" : 1548877030280,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${statuscode}"
+      }, {
+        "name" : "arg2",
+        "value" : "200"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${jsonresponse} = RequestsLibrary.To Json",
+      "time" : {
+        "start" : 1548877030281,
+        "stop" : 1548877030284,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f589e464b601edd6",
+        "name" : "Keyword Log",
+        "source" : "f589e464b601edd6.html",
+        "type" : "text/html",
+        "size" : 787
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.content}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "@{name_list}= = get value from json",
+      "time" : {
+        "start" : 1548877030294,
+        "stop" : 1548877030296,
+        "duration" : 2
+      },
+      "status" : "failed",
+      "statusMessage" : "No keyword with name 'get value from json' found.",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ec8a1e645f82fc82",
+        "name" : "Keyword Log",
+        "source" : "ec8a1e645f82fc82.html",
+        "type" : "text/html",
+        "size" : 89
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${jsonresponse}"
+      }, {
+        "name" : "arg2",
+        "value" : "data[0].first_name"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "AllCases"
+  }, {
+    "name" : "suite",
+    "value" : "Get Delete"
+  }, {
+    "name" : "subSuite",
+    "value" : "TC 002 Get With Param"
+  }, {
+    "name" : "tag",
+    "value" : "Regression"
+  }, {
+    "name" : "tag",
+    "value" : "Smoke"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "TestingWorld-PC"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ {
+      "uid" : "50116d643f5af6a2",
+      "status" : "failed",
+      "statusDetails" : "No keyword with name 'get value from json' found.",
+      "time" : {
+        "start" : 1548876944081,
+        "stop" : 1548876945026,
+        "duration" : 945
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "Regression", "Smoke" ]
+  },
+  "source" : "f8f2d97ff8f993c3.json",
+  "parameterValues" : [ ]
+}

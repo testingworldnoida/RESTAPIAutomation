@@ -1,0 +1,186 @@
+{
+  "5848a19516847fec1df9e910a8eecca7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8040401f303983e4",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/8040401f303983e4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548877029259,
+        "stop" : 1548877029404,
+        "duration" : 145
+      }
+    } ]
+  },
+  "4868fb8302258fffc55f3b31dec390b8" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ef88bc594a61414c",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/ef88bc594a61414c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548877028273,
+        "stop" : 1548877028908,
+        "duration" : 635
+      }
+    } ]
+  },
+  "ec9241fe5f8ded2e00a8ae39e289a83a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5c74da981b0c3f3d",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/5c74da981b0c3f3d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548877030879,
+        "stop" : 1548877031157,
+        "duration" : 278
+      }
+    } ]
+  },
+  "7552fe6927005cb5639f6b77107b1277" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "41d0ca27ea1824cf",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/41d0ca27ea1824cf",
+      "status" : "failed",
+      "statusDetails" : "No keyword with name 'get value from json' found.",
+      "time" : {
+        "start" : 1548877030340,
+        "stop" : 1548877030524,
+        "duration" : 184
+      }
+    } ]
+  },
+  "93915d63c16b655f1911f146ccb10507" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "94cbe61618543cd0",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/94cbe61618543cd0",
+      "status" : "failed",
+      "statusDetails" : "No keyword with name 'get value from json' found.",
+      "time" : {
+        "start" : 1548877027297,
+        "stop" : 1548877027514,
+        "duration" : 217
+      }
+    } ]
+  },
+  "52535e40cdf39e6087718e2f106d6625" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c05d039b463c7b92",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/c05d039b463c7b92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548877027615,
+        "stop" : 1548877028108,
+        "duration" : 493
+      }
+    } ]
+  },
+  "67e3f0c252f289df704b1b9abac603c4" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "69b3d724eaa4654c",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/69b3d724eaa4654c",
+      "status" : "failed",
+      "statusDetails" : "No keyword with name 'get value from json' found.",
+      "time" : {
+        "start" : 1548877029049,
+        "stop" : 1548877029245,
+        "duration" : 196
+      }
+    } ]
+  },
+  "24abce72454577cdf8978d913d14ca3e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a65fd598241b6ada",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/a65fd598241b6ada",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548877030616,
+        "stop" : 1548877030831,
+        "duration" : 215
+      }
+    } ]
+  },
+  "85d67539ce5d519d2518bd02438e9f6b" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f8f2d97ff8f993c3",
+      "reportUrl" : "http://localhost:8086/job/RobotTC/7/allure/#testresult/f8f2d97ff8f993c3",
+      "status" : "failed",
+      "statusDetails" : "No keyword with name 'get value from json' found.",
+      "time" : {
+        "start" : 1548877029484,
+        "stop" : 1548877030298,
+        "duration" : 814
+      }
+    } ]
+  }
+}

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.6.7 on win32)" generated="20190116 06:13:02.576" rpa="false">
+<suite id="s1" name="Get Delete" source="C:\Users\TestingWorld\PycharmProjects\RobotAPIAutomation\AllCases\Get_Delete">
+<suite id="s1-s1" name="TC 001 Get Request" source="C:\Users\TestingWorld\PycharmProjects\RobotAPIAutomation\AllCases\Get_Delete\TC_001_Get_Request.robot">
+<test id="s1-s1-t1" name="TC_001_Fetch_Student_details_by_id">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>FetchData</arg>
+<arg>${App_Base_URL}</arg>
+</arguments>
+<msg timestamp="20190116 06:13:09.449" level="INFO">Creating Session using : alias=FetchData, url=http://thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190116 06:13:09.447" endtime="20190116 06:13:09.453"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>FetchData</arg>
+<arg>api/studentsDetails/${StudentID}</arg>
+</arguments>
+<assign>
+<var>${Response}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.234" level="INFO">Get Request using : alias=FetchData, uri=api/studentsDetails/61, headers=None json=None</msg>
+<msg timestamp="20190116 06:13:10.236" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190116 06:13:09.455" endtime="20190116 06:13:10.236"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Response.status_code}</arg>
+</arguments>
+<assign>
+<var>${actual_code}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.243" level="INFO">${actual_code} = 200</msg>
+<status status="PASS" starttime="20190116 06:13:10.238" endtime="20190116 06:13:10.243"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${actual_code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20190116 06:13:10.246" endtime="20190116 06:13:10.248"></status>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<doc>Convert a string to a JSON object</doc>
+<arguments>
+<arg>${Response.content}</arg>
+</arguments>
+<assign>
+<var>${json_res}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.253" level="INFO">To JSON using : content={"status":"true","data":{"id":61,"first_name":"abcdef","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} </msg>
+<msg timestamp="20190116 06:13:10.253" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20190116 06:13:10.253" level="INFO">${json_res} = {'status': 'true', 'data': {'id': 61, 'first_name': 'abcdef', 'middle_name': 'sample string 3', 'last_name': 'sample string 4', 'date_of_birth': 'sample string 5'}}</msg>
+<status status="PASS" starttime="20190116 06:13:10.251" endtime="20190116 06:13:10.254"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_res}</arg>
+<arg>data.first_name</arg>
+</arguments>
+<assign>
+<var>@{first_name_list}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.571" level="INFO">@{first_name_list} = [ abcdef ]</msg>
+<status status="PASS" starttime="20190116 06:13:10.255" endtime="20190116 06:13:10.571"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${first_name_list}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${first_name}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.582" level="INFO">${first_name} = abcdef</msg>
+<status status="PASS" starttime="20190116 06:13:10.580" endtime="20190116 06:13:10.583"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${first_name}</arg>
+</arguments>
+<status status="PASS" starttime="20190116 06:13:10.584" endtime="20190116 06:13:10.587"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${first_name}</arg>
+<arg>Test Student</arg>
+</arguments>
+<msg timestamp="20190116 06:13:10.591" level="FAIL">abcdef != Test Student</msg>
+<status status="FAIL" starttime="20190116 06:13:10.588" endtime="20190116 06:13:10.592"></status>
+</kw>
+<status status="FAIL" starttime="20190116 06:13:09.443" endtime="20190116 06:13:10.594" critical="yes">abcdef != Test Student</status>
+</test>
+<test id="s1-s1-t2" name="TC_002_Fetch_Student_details_by_Name">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>FetchData</arg>
+<arg>${App_Base_URL}</arg>
+</arguments>
+<msg timestamp="20190116 06:13:10.605" level="INFO">Creating Session using : alias=FetchData, url=http://thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190116 06:13:10.603" endtime="20190116 06:13:10.608"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>FetchData</arg>
+<arg>api/studentsDetails/${StudentID}</arg>
+</arguments>
+<assign>
+<var>${Response}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.719" level="INFO">Get Request using : alias=FetchData, uri=api/studentsDetails/61, headers=None json=None</msg>
+<msg timestamp="20190116 06:13:10.720" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190116 06:13:10.610" endtime="20190116 06:13:10.721"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Response.status_code}</arg>
+</arguments>
+<assign>
+<var>${actual_code}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.725" level="INFO">${actual_code} = 200</msg>
+<status status="PASS" starttime="20190116 06:13:10.722" endtime="20190116 06:13:10.726"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${actual_code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20190116 06:13:10.727" endtime="20190116 06:13:10.729"></status>
+</kw>
+<status status="PASS" starttime="20190116 06:13:10.600" endtime="20190116 06:13:10.731" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20190116 06:13:02.984" endtime="20190116 06:13:10.759"></status>
+</suite>
+<suite id="s1-s2" name="TC 002 Get With Param" source="C:\Users\TestingWorld\PycharmProjects\RobotAPIAutomation\AllCases\Get_Delete\TC_002_Get_With_Param.robot">
+<test id="s1-s2-t1" name="TC_002 Validate Get Request with Parameters">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>Get_Param</arg>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20190116 06:13:10.811" level="INFO">Creating Session using : alias=Get_Param, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190116 06:13:10.810" endtime="20190116 06:13:10.813"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>page=2</arg>
+</arguments>
+<assign>
+<var>&amp;{param}</var>
+</assign>
+<msg timestamp="20190116 06:13:10.818" level="INFO">&amp;{param} = { page=2 }</msg>
+<status status="PASS" starttime="20190116 06:13:10.814" endtime="20190116 06:13:10.819"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Get_Param</arg>
+<arg>/api/users</arg>
+<arg>params=${param}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.188" level="INFO">Get Request using : alias=Get_Param, uri=/api/users, headers=None json=None</msg>
+<msg timestamp="20190116 06:13:13.189" level="INFO">d:\python36\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20190116 06:13:13.190" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190116 06:13:10.822" endtime="20190116 06:13:13.191"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${statuscode}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.195" level="INFO">${statuscode} = 200</msg>
+<status status="PASS" starttime="20190116 06:13:13.193" endtime="20190116 06:13:13.195"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${statuscode}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20190116 06:13:13.197" endtime="20190116 06:13:13.198"></status>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<doc>Convert a string to a JSON object</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${jsonresponse}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.205" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
+<msg timestamp="20190116 06:13:13.206" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20190116 06:13:13.206" level="INFO">${jsonresponse} = {'page': 2, 'per_page': 3, 'total': 12, 'total_pages': 4, 'data': [{'id': 4, 'first_name': 'Eve', 'last_name': 'Holt', 'avatar': 'https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg'},...</msg>
+<status status="PASS" starttime="20190116 06:13:13.201" endtime="20190116 06:13:13.207"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${jsonresponse}</arg>
+<arg>data[0].first_name</arg>
+</arguments>
+<assign>
+<var>@{name_list}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.437" level="INFO">@{name_list} = [ Eve ]</msg>
+<status status="PASS" starttime="20190116 06:13:13.210" endtime="20190116 06:13:13.437"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${name_list}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.440" level="INFO">${name} = Eve</msg>
+<status status="PASS" starttime="20190116 06:13:13.439" endtime="20190116 06:13:13.440"></status>
+</kw>
+<status status="PASS" starttime="20190116 06:13:10.800" endtime="20190116 06:13:13.442" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190116 06:13:10.767" endtime="20190116 06:13:13.445"></status>
+</suite>
+<suite id="s1-s3" name="TC 003 DeleteRequest" source="C:\Users\TestingWorld\PycharmProjects\RobotAPIAutomation\AllCases\Get_Delete\TC_003_DeleteRequest.robot">
+<test id="s1-s3-t1" name="TC_003 Validate Delete Request">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>AppAccess</arg>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20190116 06:13:13.479" level="INFO">Creating Session using : alias=AppAccess, url=http://thetestingworldapi.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190116 06:13:13.477" endtime="20190116 06:13:13.481"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>AppAccess</arg>
+<arg>/api/studentsDetails/77</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.602" level="INFO">Delete Request using : alias=AppAccess, uri=/api/studentsDetails/77, data=None,                     headers=None, allow_redirects=True </msg>
+<msg timestamp="20190116 06:13:13.602" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190116 06:13:13.482" endtime="20190116 06:13:13.602"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.606" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20190116 06:13:13.604" endtime="20190116 06:13:13.606"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20190116 06:13:13.607" endtime="20190116 06:13:13.610"></status>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<doc>Convert a string to a JSON object</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${jsonresponse}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.614" level="INFO">To JSON using : content={"status":"false","msg":"record not found"} </msg>
+<msg timestamp="20190116 06:13:13.614" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20190116 06:13:13.615" level="INFO">${jsonresponse} = {'status': 'false', 'msg': 'record not found'}</msg>
+<status status="PASS" starttime="20190116 06:13:13.612" endtime="20190116 06:13:13.616"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${jsonresponse}</arg>
+<arg>status</arg>
+</arguments>
+<assign>
+<var>@{status_list}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.823" level="INFO">@{status_list} = [ false ]</msg>
+<status status="PASS" starttime="20190116 06:13:13.617" endtime="20190116 06:13:13.823"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${status_list}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20190116 06:13:13.826" level="INFO">${status} = false</msg>
+<status status="PASS" starttime="20190116 06:13:13.824" endtime="20190116 06:13:13.826"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>true</arg>
+</arguments>
+<msg timestamp="20190116 06:13:13.830" level="FAIL">false != true</msg>
+<status status="FAIL" starttime="20190116 06:13:13.828" endtime="20190116 06:13:13.832"></status>
+</kw>
+<status status="FAIL" starttime="20190116 06:13:13.474" endtime="20190116 06:13:13.833" critical="yes">false != true</status>
+</test>
+<status status="FAIL" starttime="20190116 06:13:13.452" endtime="20190116 06:13:13.839"></status>
+</suite>
+<status status="FAIL" starttime="20190116 06:13:02.604" endtime="20190116 06:13:13.846"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="2">Critical Tests</stat>
+<stat pass="2" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="2" id="s1" name="Get Delete">Get Delete</stat>
+<stat pass="1" fail="1" id="s1-s1" name="TC 001 Get Request">Get Delete.TC 001 Get Request</stat>
+<stat pass="1" fail="0" id="s1-s2" name="TC 002 Get With Param">Get Delete.TC 002 Get With Param</stat>
+<stat pass="0" fail="1" id="s1-s3" name="TC 003 DeleteRequest">Get Delete.TC 003 DeleteRequest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

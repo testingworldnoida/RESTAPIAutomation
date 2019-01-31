@@ -1,0 +1,233 @@
+{
+  "uid" : "41d0ca27ea1824cf",
+  "name" : "TC_003 Validate Delete Request",
+  "fullName" : "AllCases.Get Delete.TC 003 DeleteRequest.TC_003 Validate Delete Request",
+  "historyId" : "7552fe6927005cb5639f6b77107b1277",
+  "time" : {
+    "start" : 1548877030340,
+    "stop" : 1548877030524,
+    "duration" : 184
+  },
+  "status" : "failed",
+  "statusMessage" : "No keyword with name 'get value from json' found.",
+  "flaky" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "No keyword with name 'get value from json' found.",
+    "steps" : [ {
+      "name" : "RequestsLibrary.Create Session",
+      "time" : {
+        "start" : 1548877030342,
+        "stop" : 1548877030347,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4446a284d3e709b9",
+        "name" : "Keyword Log",
+        "source" : "4446a284d3e709b9.html",
+        "type" : "text/html",
+        "size" : 225
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "AppAccess"
+      }, {
+        "name" : "arg2",
+        "value" : "${base_url}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${response} = RequestsLibrary.Delete Request",
+      "time" : {
+        "start" : 1548877030349,
+        "stop" : 1548877030486,
+        "duration" : 137
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "cfe3f0ea81a283e8",
+        "name" : "Keyword Log",
+        "source" : "cfe3f0ea81a283e8.html",
+        "type" : "text/html",
+        "size" : 207
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "AppAccess"
+      }, {
+        "name" : "arg2",
+        "value" : "/api/studentsDetails/77"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${code} = BuiltIn.Convert To String",
+      "time" : {
+        "start" : 1548877030488,
+        "stop" : 1548877030491,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ff45b3e33a550886",
+        "name" : "Keyword Log",
+        "source" : "ff45b3e33a550886.html",
+        "type" : "text/html",
+        "size" : 34
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.status_code}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Should Be Equal",
+      "time" : {
+        "start" : 1548877030493,
+        "stop" : 1548877030494,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${code}"
+      }, {
+        "name" : "arg2",
+        "value" : "200"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${jsonresponse} = RequestsLibrary.To Json",
+      "time" : {
+        "start" : 1548877030495,
+        "stop" : 1548877030499,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "41a5dc0346ba9c1e",
+        "name" : "Keyword Log",
+        "source" : "41a5dc0346ba9c1e.html",
+        "type" : "text/html",
+        "size" : 230
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.content}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "@{status_list}= = get value from json",
+      "time" : {
+        "start" : 1548877030517,
+        "stop" : 1548877030521,
+        "duration" : 4
+      },
+      "status" : "failed",
+      "statusMessage" : "No keyword with name 'get value from json' found.",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3c33700bfa6a6f7f",
+        "name" : "Keyword Log",
+        "source" : "3c33700bfa6a6f7f.html",
+        "type" : "text/html",
+        "size" : 89
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${jsonresponse}"
+      }, {
+        "name" : "arg2",
+        "value" : "status"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 6,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "AllCases"
+  }, {
+    "name" : "suite",
+    "value" : "Get Delete"
+  }, {
+    "name" : "subSuite",
+    "value" : "TC 003 DeleteRequest"
+  }, {
+    "name" : "tag",
+    "value" : "Regression"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "TestingWorld-PC"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ {
+      "uid" : "60ce9187b23d6398",
+      "status" : "failed",
+      "statusDetails" : "No keyword with name 'get value from json' found.",
+      "time" : {
+        "start" : 1548876945098,
+        "stop" : 1548876945341,
+        "duration" : 243
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "Regression" ]
+  },
+  "source" : "41d0ca27ea1824cf.json",
+  "parameterValues" : [ ]
+}

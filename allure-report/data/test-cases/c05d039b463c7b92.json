@@ -1,0 +1,384 @@
+{
+  "uid" : "c05d039b463c7b92",
+  "name" : "TC_001_Fetch_Student_details_by_id",
+  "fullName" : "AllCases.EndtoEnd.TC 007 ValidateStatusCode Keyword.TC_001_Fetch_Student_details_by_id",
+  "historyId" : "52535e40cdf39e6087718e2f106d6625",
+  "time" : {
+    "start" : 1548877027615,
+    "stop" : 1548877028108,
+    "duration" : 493
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "UserKeyword.Fetch and Validate Get Status Code",
+      "time" : {
+        "start" : 1548877027617,
+        "stop" : 1548877027761,
+        "duration" : 144
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "RequestsLibrary.Create Session",
+        "time" : {
+          "start" : 1548877027619,
+          "stop" : 1548877027624,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f859ad952057d80a",
+          "name" : "Keyword Log",
+          "source" : "f859ad952057d80a.html",
+          "type" : "text/html",
+          "size" : 222
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "SName"
+        }, {
+          "name" : "arg2",
+          "value" : "${base_url}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "${response} = RequestsLibrary.Get Request",
+        "time" : {
+          "start" : 1548877027625,
+          "stop" : 1548877027752,
+          "duration" : 127
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d55e8559fde4599c",
+          "name" : "Keyword Log",
+          "source" : "d55e8559fde4599c.html",
+          "type" : "text/html",
+          "size" : 155
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "SName"
+        }, {
+          "name" : "arg2",
+          "value" : "api/studentsDetails/${studentId}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "${statusC} = BuiltIn.Convert To String",
+        "time" : {
+          "start" : 1548877027753,
+          "stop" : 1548877027757,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "762f633994cf03cc",
+          "name" : "Keyword Log",
+          "source" : "762f633994cf03cc.html",
+          "type" : "text/html",
+          "size" : 37
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${response.status_code}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "BuiltIn.Should Be Equal",
+        "time" : {
+          "start" : 1548877027758,
+          "stop" : 1548877027760,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${expetcedStausCode}"
+        }, {
+          "name" : "arg2",
+          "value" : "${statusC}"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "50"
+      }, {
+        "name" : "arg2",
+        "value" : "200"
+      } ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
+    }, {
+      "name" : "${respnse} = UserKeyword.Fetch and Return Get Response",
+      "time" : {
+        "start" : 1548877027762,
+        "stop" : 1548877027964,
+        "duration" : 202
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "RequestsLibrary.Create Session",
+        "time" : {
+          "start" : 1548877027764,
+          "stop" : 1548877027782,
+          "duration" : 18
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7be77f424cb106af",
+          "name" : "Keyword Log",
+          "source" : "7be77f424cb106af.html",
+          "type" : "text/html",
+          "size" : 222
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "SName"
+        }, {
+          "name" : "arg2",
+          "value" : "${base_url}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "${response} = RequestsLibrary.Get Request",
+        "time" : {
+          "start" : 1548877027783,
+          "stop" : 1548877027960,
+          "duration" : 177
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "556f909b76cec009",
+          "name" : "Keyword Log",
+          "source" : "556f909b76cec009.html",
+          "type" : "text/html",
+          "size" : 155
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "SName"
+        }, {
+          "name" : "arg2",
+          "value" : "api/studentsDetails/${studentId}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "2507cc28a4ac2464",
+        "name" : "Keyword Log",
+        "source" : "2507cc28a4ac2464.html",
+        "type" : "text/html",
+        "size" : 50
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "50"
+      } ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Log To Console",
+      "time" : {
+        "start" : 1548877027965,
+        "stop" : 1548877027968,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${respnse.content}"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${respnse1} = UserKeyword.Fetch and Return Get Response",
+      "time" : {
+        "start" : 1548877027969,
+        "stop" : 1548877028102,
+        "duration" : 133
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "RequestsLibrary.Create Session",
+        "time" : {
+          "start" : 1548877027971,
+          "stop" : 1548877027976,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7443b5cf161ae2b8",
+          "name" : "Keyword Log",
+          "source" : "7443b5cf161ae2b8.html",
+          "type" : "text/html",
+          "size" : 222
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "SName"
+        }, {
+          "name" : "arg2",
+          "value" : "${base_url}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "${response} = RequestsLibrary.Get Request",
+        "time" : {
+          "start" : 1548877027977,
+          "stop" : 1548877028099,
+          "duration" : 122
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "6b9774e264a0e237",
+          "name" : "Keyword Log",
+          "source" : "6b9774e264a0e237.html",
+          "type" : "text/html",
+          "size" : 155
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "SName"
+        }, {
+          "name" : "arg2",
+          "value" : "api/studentsDetails/${studentId}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "f02262674a60e870",
+        "name" : "Keyword Log",
+        "source" : "f02262674a60e870.html",
+        "type" : "text/html",
+        "size" : 51
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "51"
+      } ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Log To Console",
+      "time" : {
+        "start" : 1548877028104,
+        "stop" : 1548877028106,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${respnse1.content}"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 9,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 13,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "AllCases"
+  }, {
+    "name" : "suite",
+    "value" : "EndtoEnd"
+  }, {
+    "name" : "subSuite",
+    "value" : "TC 007 ValidateStatusCode Keyword"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "TestingWorld-PC"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ {
+      "uid" : "6f8313e235821c5c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548876942712,
+        "stop" : 1548876943180,
+        "duration" : 468
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c05d039b463c7b92.json",
+  "parameterValues" : [ ]
+}

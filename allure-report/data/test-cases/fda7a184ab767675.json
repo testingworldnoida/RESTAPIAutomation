@@ -1,0 +1,232 @@
+{
+  "uid" : "fda7a184ab767675",
+  "name" : "TC_002_Fetch_Student_details_by_Name",
+  "fullName" : "AllCases.Get Delete.TC 001 Get Request.TC_002_Fetch_Student_details_by_Name",
+  "historyId" : "5848a19516847fec1df9e910a8eecca7",
+  "time" : {
+    "start" : 1548876943861,
+    "stop" : 1548876943995,
+    "duration" : 134
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "UserKeyword.Welcome User",
+    "time" : {
+      "start" : 1548876943631,
+      "stop" : 1548876943635,
+      "duration" : 4
+    },
+    "description" : "Executing New Test Case",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "BuiltIn.Log To Console",
+      "time" : {
+        "start" : 1548876943633,
+        "stop" : 1548876943634,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "This is Starting of TestCase"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "RequestsLibrary.Create Session",
+      "time" : {
+        "start" : 1548876943864,
+        "stop" : 1548876943869,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e83e018cabb989c0",
+        "name" : "Keyword Log",
+        "source" : "e83e018cabb989c0.html",
+        "type" : "text/html",
+        "size" : 226
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "FetchData"
+      }, {
+        "name" : "arg2",
+        "value" : "${App_Base_URL}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${Response} = RequestsLibrary.Get Request",
+      "time" : {
+        "start" : 1548876943872,
+        "stop" : 1548876943982,
+        "duration" : 110
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d7ea4cf3b2f01469",
+        "name" : "Keyword Log",
+        "source" : "d7ea4cf3b2f01469.html",
+        "type" : "text/html",
+        "size" : 159
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "FetchData"
+      }, {
+        "name" : "arg2",
+        "value" : "api/studentsDetails/${StudentID}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${actual_code} = BuiltIn.Convert To String",
+      "time" : {
+        "start" : 1548876943984,
+        "stop" : 1548876943988,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e93d97a91dfa2d6b",
+        "name" : "Keyword Log",
+        "source" : "e93d97a91dfa2d6b.html",
+        "type" : "text/html",
+        "size" : 41
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${Response.status_code}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Should Be Equal",
+      "time" : {
+        "start" : 1548876943990,
+        "stop" : 1548876943992,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${actual_code}"
+      }, {
+        "name" : "arg2",
+        "value" : "200"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "UserKeyword.End TestCase",
+    "time" : {
+      "start" : 1548876944012,
+      "stop" : 1548876944018,
+      "duration" : 6
+    },
+    "description" : "TestCase Completed",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "BuiltIn.Log To Console",
+      "time" : {
+        "start" : 1548876944014,
+        "stop" : 1548876944016,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "This is End of TestCase"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "AllCases"
+  }, {
+    "name" : "suite",
+    "value" : "Get Delete"
+  }, {
+    "name" : "subSuite",
+    "value" : "TC 001 Get Request"
+  }, {
+    "name" : "tag",
+    "value" : "Hello"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "TestingWorld-PC"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "Hello" ]
+  },
+  "source" : "fda7a184ab767675.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,161 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "AllCases",
+    "children" : [ {
+      "name" : "EndtoEnd",
+      "children" : [ {
+        "name" : "TC 006 E2E",
+        "children" : [ {
+          "name" : "TC_006_End_to_End_TestCase",
+          "uid" : "94cbe61618543cd0",
+          "parentUid" : "97ca39a173b79c59d4056e60ce61ec97",
+          "status" : "failed",
+          "time" : {
+            "start" : 1548877027297,
+            "stop" : 1548877027514,
+            "duration" : 217
+          },
+          "flaky" : true,
+          "parameters" : [ ]
+        } ],
+        "uid" : "97ca39a173b79c59d4056e60ce61ec97"
+      }, {
+        "name" : "TC 007 ValidateStatusCode Keyword",
+        "children" : [ {
+          "name" : "TC_001_Fetch_Student_details_by_id",
+          "uid" : "c05d039b463c7b92",
+          "parentUid" : "6343a9f0ead71abbf1f0a68095fda0a9",
+          "status" : "passed",
+          "time" : {
+            "start" : 1548877027615,
+            "stop" : 1548877028108,
+            "duration" : 493
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "6343a9f0ead71abbf1f0a68095fda0a9"
+      }, {
+        "name" : "TC 008 Post ReadJson",
+        "children" : [ {
+          "name" : "TC_004 create new resource",
+          "uid" : "ef88bc594a61414c",
+          "parentUid" : "da57b2983ba11e925fc30229df4f436e",
+          "status" : "passed",
+          "time" : {
+            "start" : 1548877028273,
+            "stop" : 1548877028908,
+            "duration" : 635
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "da57b2983ba11e925fc30229df4f436e"
+      } ],
+      "uid" : "2543521fc1844fd992b2fbef668831b3"
+    }, {
+      "name" : "Get Delete",
+      "children" : [ {
+        "name" : "TC 001 Get Request",
+        "children" : [ {
+          "name" : "TC_001_Fetch_Student_details_by_id",
+          "uid" : "69b3d724eaa4654c",
+          "parentUid" : "2c4dc7545c1bc2cfc2533f1c9a1e33f5",
+          "status" : "failed",
+          "time" : {
+            "start" : 1548877029049,
+            "stop" : 1548877029245,
+            "duration" : 196
+          },
+          "flaky" : true,
+          "parameters" : [ ]
+        }, {
+          "name" : "TC_002_Fetch_Student_details_by_Name",
+          "uid" : "8040401f303983e4",
+          "parentUid" : "2c4dc7545c1bc2cfc2533f1c9a1e33f5",
+          "status" : "passed",
+          "time" : {
+            "start" : 1548877029259,
+            "stop" : 1548877029404,
+            "duration" : 145
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "2c4dc7545c1bc2cfc2533f1c9a1e33f5"
+      }, {
+        "name" : "TC 002 Get With Param",
+        "children" : [ {
+          "name" : "TC_002 Validate Get Request with Parameters",
+          "uid" : "f8f2d97ff8f993c3",
+          "parentUid" : "35dc6b1983bb70a3d8d969f6afe2e737",
+          "status" : "failed",
+          "time" : {
+            "start" : 1548877029484,
+            "stop" : 1548877030298,
+            "duration" : 814
+          },
+          "flaky" : true,
+          "parameters" : [ ]
+        } ],
+        "uid" : "35dc6b1983bb70a3d8d969f6afe2e737"
+      }, {
+        "name" : "TC 003 DeleteRequest",
+        "children" : [ {
+          "name" : "TC_003 Validate Delete Request",
+          "uid" : "41d0ca27ea1824cf",
+          "parentUid" : "f228f6a0cbfe982d751b45a37b1f7b39",
+          "status" : "failed",
+          "time" : {
+            "start" : 1548877030340,
+            "stop" : 1548877030524,
+            "duration" : 184
+          },
+          "flaky" : true,
+          "parameters" : [ ]
+        } ],
+        "uid" : "f228f6a0cbfe982d751b45a37b1f7b39"
+      } ],
+      "uid" : "81ec34fbd3119162be6c89df5dd0df67"
+    }, {
+      "name" : "Put Post",
+      "children" : [ {
+        "name" : "TC 004 PostRequest",
+        "children" : [ {
+          "name" : "TC_004 create new resource",
+          "uid" : "a65fd598241b6ada",
+          "parentUid" : "bc3e354571380ea2807e7b88d0877175",
+          "status" : "passed",
+          "time" : {
+            "start" : 1548877030616,
+            "stop" : 1548877030831,
+            "duration" : 215
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "bc3e354571380ea2807e7b88d0877175"
+      }, {
+        "name" : "TC 005 PutRequst",
+        "children" : [ {
+          "name" : "TC_004 create new resource",
+          "uid" : "5c74da981b0c3f3d",
+          "parentUid" : "90e2000b92ea06be7d51b7e964eb5369",
+          "status" : "passed",
+          "time" : {
+            "start" : 1548877030879,
+            "stop" : 1548877031157,
+            "duration" : 278
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "90e2000b92ea06be7d51b7e964eb5369"
+      } ],
+      "uid" : "bcbd51866857c25f034ed53eca4dfa01"
+    } ],
+    "uid" : "f8703a0b66d48c3bfef94bed923893d5"
+  } ]
+}

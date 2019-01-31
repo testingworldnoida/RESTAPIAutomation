@@ -1,0 +1,252 @@
+{
+  "uid" : "a65fd598241b6ada",
+  "name" : "TC_004 create new resource",
+  "fullName" : "AllCases.Put Post.TC 004 PostRequest.TC_004 create new resource",
+  "historyId" : "24abce72454577cdf8978d913d14ca3e",
+  "time" : {
+    "start" : 1548877030616,
+    "stop" : 1548877030831,
+    "duration" : 215
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "RequestsLibrary.Create Session",
+      "time" : {
+        "start" : 1548877030618,
+        "stop" : 1548877030625,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "83cda4dbb88ca648",
+        "name" : "Keyword Log",
+        "source" : "83cda4dbb88ca648.html",
+        "type" : "text/html",
+        "size" : 224
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "AddData"
+      }, {
+        "name" : "arg2",
+        "value" : "${base_url}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "&{body} = BuiltIn.Create Dictionary",
+      "time" : {
+        "start" : 1548877030627,
+        "stop" : 1548877030631,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "832c9d4b9303d9b0",
+        "name" : "Keyword Log",
+        "source" : "832c9d4b9303d9b0.html",
+        "type" : "text/html",
+        "size" : 114
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "first_name=Testing"
+      }, {
+        "name" : "arg2",
+        "value" : "middle_name=A"
+      }, {
+        "name" : "arg3",
+        "value" : "last_name=World"
+      }, {
+        "name" : "arg4",
+        "value" : "date_of_birth=12/12/1990"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "&{header} = BuiltIn.Create Dictionary",
+      "time" : {
+        "start" : 1548877030633,
+        "stop" : 1548877030636,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "66c941b01959b96b",
+        "name" : "Keyword Log",
+        "source" : "66c941b01959b96b.html",
+        "type" : "text/html",
+        "size" : 66
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Content-Type=application/json"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${response} = RequestsLibrary.Post Request",
+      "time" : {
+        "start" : 1548877030638,
+        "stop" : 1548877030815,
+        "duration" : 177
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d4835465ef810ae4",
+        "name" : "Keyword Log",
+        "source" : "d4835465ef810ae4.html",
+        "type" : "text/html",
+        "size" : 318
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "AddData"
+      }, {
+        "name" : "arg2",
+        "value" : "/api/studentsDetails"
+      }, {
+        "name" : "arg3",
+        "value" : "data=${body}"
+      }, {
+        "name" : "arg4",
+        "value" : "headers=${header}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Log To Console",
+      "time" : {
+        "start" : 1548877030817,
+        "stop" : 1548877030820,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.content}"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${code} = BuiltIn.Convert To String",
+      "time" : {
+        "start" : 1548877030822,
+        "stop" : 1548877030826,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b42eb77a2bf9034e",
+        "name" : "Keyword Log",
+        "source" : "b42eb77a2bf9034e.html",
+        "type" : "text/html",
+        "size" : 34
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.status_code}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Should Be Equal",
+      "time" : {
+        "start" : 1548877030827,
+        "stop" : 1548877030829,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${code}"
+      }, {
+        "name" : "arg2",
+        "value" : "201"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "AllCases"
+  }, {
+    "name" : "suite",
+    "value" : "Put Post"
+  }, {
+    "name" : "subSuite",
+    "value" : "TC 004 PostRequest"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "TestingWorld-PC"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ {
+      "uid" : "41a83a2662f42689",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548876945488,
+        "stop" : 1548876945671,
+        "duration" : 183
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a65fd598241b6ada.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,279 @@
+{
+  "uid" : "ef88bc594a61414c",
+  "name" : "TC_004 create new resource",
+  "fullName" : "AllCases.EndtoEnd.TC 008 Post ReadJson.TC_004 create new resource",
+  "historyId" : "4868fb8302258fffc55f3b31dec390b8",
+  "time" : {
+    "start" : 1548877028273,
+    "stop" : 1548877028908,
+    "duration" : 635
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "RequestsLibrary.Create Session",
+      "time" : {
+        "start" : 1548877028276,
+        "stop" : 1548877028302,
+        "duration" : 26
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "90141806ecf3198f",
+        "name" : "Keyword Log",
+        "source" : "90141806ecf3198f.html",
+        "type" : "text/html",
+        "size" : 224
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "AddData"
+      }, {
+        "name" : "arg2",
+        "value" : "${base_url}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "&{header} = BuiltIn.Create Dictionary",
+      "time" : {
+        "start" : 1548877028329,
+        "stop" : 1548877028608,
+        "duration" : 279
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9ef9735ea95dc520",
+        "name" : "Keyword Log",
+        "source" : "9ef9735ea95dc520.html",
+        "type" : "text/html",
+        "size" : 66
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Content-Type=application/json"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${jsonContent} = UserKeyword.Fetch Request Content",
+      "time" : {
+        "start" : 1548877028610,
+        "stop" : 1548877028735,
+        "duration" : 125
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "${jsonbody} = ReadJsonContent.Read Request Content",
+        "time" : {
+          "start" : 1548877028719,
+          "stop" : 1548877028728,
+          "duration" : 9
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "4f0522c3d06c46ce",
+          "name" : "Keyword Log",
+          "source" : "4f0522c3d06c46ce.html",
+          "type" : "text/html",
+          "size" : 126
+        } ],
+        "parameters" : [ ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "7da964b65a4b8b2a",
+        "name" : "Keyword Log",
+        "source" : "7da964b65a4b8b2a.html",
+        "type" : "text/html",
+        "size" : 129
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "${response} = RequestsLibrary.Post Request",
+      "time" : {
+        "start" : 1548877028738,
+        "stop" : 1548877028883,
+        "duration" : 145
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6187d0ba50d765e5",
+        "name" : "Keyword Log",
+        "source" : "6187d0ba50d765e5.html",
+        "type" : "text/html",
+        "size" : 311
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "AddData"
+      }, {
+        "name" : "arg2",
+        "value" : "/api/studentsDetails"
+      }, {
+        "name" : "arg3",
+        "value" : "data=${jsonContent}"
+      }, {
+        "name" : "arg4",
+        "value" : "headers=${header}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Log To Console",
+      "time" : {
+        "start" : 1548877028885,
+        "stop" : 1548877028887,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.content}"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "${code} = BuiltIn.Convert To String",
+      "time" : {
+        "start" : 1548877028889,
+        "stop" : 1548877028894,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8edfbae6e20f0eee",
+        "name" : "Keyword Log",
+        "source" : "8edfbae6e20f0eee.html",
+        "type" : "text/html",
+        "size" : 34
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.status_code}"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Should Be Equal",
+      "time" : {
+        "start" : 1548877028896,
+        "stop" : 1548877028899,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${code}"
+      }, {
+        "name" : "arg2",
+        "value" : "201"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "BuiltIn.Log To Console",
+      "time" : {
+        "start" : 1548877028901,
+        "stop" : 1548877028904,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${response.content}"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 9,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "AllCases"
+  }, {
+    "name" : "suite",
+    "value" : "EndtoEnd"
+  }, {
+    "name" : "subSuite",
+    "value" : "TC 008 Post ReadJson"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "TestingWorld-PC"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ {
+      "uid" : "33ec46a7cae41ac",
+      "status" : "passed",
+      "time" : {
+        "start" : 1548876943277,
+        "stop" : 1548876943501,
+        "duration" : 224
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ef88bc594a61414c.json",
+  "parameterValues" : [ ]
+}
